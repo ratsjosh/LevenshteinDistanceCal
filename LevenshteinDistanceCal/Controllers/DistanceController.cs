@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace LevenshteinDistanceCal.Controllers
 {
-    [Authorize]
+
     public class DistanceController : Controller
     {
         public IActionResult Index()
