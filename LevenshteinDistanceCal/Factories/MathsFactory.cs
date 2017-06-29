@@ -67,7 +67,7 @@ namespace LevenshteinDistanceCal.Factories
             if (maxLen == 0.0F)
                 return 1.0F;
             else
-                return 1.0F - dis / maxLen;
+                return (1.0F - dis / maxLen) * 100;
         }
     }
 }

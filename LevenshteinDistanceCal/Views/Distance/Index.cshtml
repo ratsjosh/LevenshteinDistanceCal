@@ -1,23 +1,24 @@
 ﻿@model LevenshteinDistanceModel
-<h1>Levenshtein Distance & optimal assignment problem</h1>
-<h4>Online calculator for measuring the similarities between 2 words</h4>
+<h1>Words similarity test</h1>
+<h4>Online calculator for measuring the similarity between 2 words</h4>
 <br />
+<h3 class="legend">Behind the scenes</h3>
 <p>Levenshtein distance is the number of operations such as deletions, insertions, or substitutions required to transform one string to another.</p>
 <p>For example, if source is "execution" and target is "interaction", to transform "execution" to "interaction" you will need to change first "e" to "i", second "x" to "n", so on and so forth. After multiple deletions, insertions and substituitions, levenshtein distance will be 6.</p>
 <p>Levenshtein distance is named after the Russian scientist Vladimir Levenshtein, who devised the algorithm in 1965.</p>
 <p>This has a wide range of applications, for instance, biological testings, correction systems for optical character recognition, spell checkers, etc.
     You can find more information, for example, in <a href="http://en.wikipedia.org/wiki/Levenshtein_distance">Wikipedia</a></p>
 <br />
-<h3 class="legend">Levenshtein Distance</h3>
+<h3 class="legend">Similarity Calculator</h3>
 <form asp-controller="Distance" asp-action="CalculateLevenshteinDistance" method="post">
     <div class="form-group">
         <label for="source">Source: </label>
-        <input type="text" class="form-control" asp-for="Source" id="source" />
+        <textarea type="text" class="form-control" asp-for="Source" id="source" >execution</textarea>
     </div>
 
     <div class="form-group">
         <label for="target">Target: </label>
-        <input type="text" class="form-control" asp-for="Target" id="target" />
+        <textarea type="text" class="form-control" asp-for="Target" id="target" >interaction</textarea>
     </div>
     <button class="btn btn-success" type="submit">Calculate</button>
 </form>
