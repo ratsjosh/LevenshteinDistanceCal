@@ -57,5 +57,17 @@ namespace LevenshteinDistanceCal.Factories
             }
             return d[n, m];
         }
+
+        public static float Similarity(string string1, string string2)
+        {
+            float dis = Compute(string1, string2);
+            float maxLen = string1.Length;
+            if (maxLen < string2.Length)
+                maxLen = string2.Length;
+            if (maxLen == 0.0F)
+                return 1.0F;
+            else
+                return 1.0F - dis / maxLen;
+        }
     }
 }

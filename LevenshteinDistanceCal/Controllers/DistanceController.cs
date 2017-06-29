@@ -22,8 +22,8 @@ namespace LevenshteinDistanceCal.Controllers
         {
             if (ModelState.IsValid)
             {
-                    int result = MathsFactory.Compute(model.Target, model.Source);
-                    ViewBag.Distance = $"Distance: { result }";
+                    float result = MathsFactory.Similarity(model.Target, model.Source);
+                    ViewBag.Distance = $"Similarity (%): { result }";
             }
 
             return View("Index");
