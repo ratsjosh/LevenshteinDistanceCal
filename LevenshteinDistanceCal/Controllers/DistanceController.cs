@@ -22,7 +22,7 @@ namespace LevenshteinDistanceCal.Controllers
         {
             if (ModelState.IsValid)
             {
-                    float result = MathsFactory.Similarity(model.Target, model.Source);
+                    float result = MathsFactory.Similarity(model.Target.ToLower(), model.Source.ToLower());
                     ViewBag.Distance = $"Similarity (%): { result }";
             }
 
