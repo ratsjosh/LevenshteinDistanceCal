@@ -1,0 +1,26 @@
+﻿@model LevenshteinDistanceModel
+<h1>Levenshtein Distance</h1>
+<h4>Online calculator for measuring Levenshtein distance between two words</h4>
+<br />
+<p>Levenshtein distance is the number of operations such as deletions, insertions, or substitutions required to transform one string to another.</p>
+<p>For example, if source is "execution" and target is "interaction", to transform "execution" to "interaction" you will need to change first "e" to "i", second "x" to "n", so on and so forth. After multiple deletions, insertions and substituitions, levenshtein distance will be 6.</p>
+<p>Levenshtein distance is named after the Russian scientist Vladimir Levenshtein, who devised the algorithm in 1965.</p>
+<p>This has a wide range of applications, for instance, Biological testings, correction systems for optical character recognition, spell checkers, etc.
+    You can find more information, for example, in <a href="http://en.wikipedia.org/wiki/Levenshtein_distance">Wikipedia</a></p>
+
+<h3 class="legend">Levenshtein Distance</h3>
+<form asp-controller="Distance" asp-action="CalculateLevenshteinDistance" method="post">
+    <div class="form-group">
+        <label for="source">Source: </label>
+        <input type="text" class="form-control" asp-for="Source" id="source" />
+    </div>
+
+    <div class="form-group">
+        <label for="target">Target: </label>
+        <input type="text" class="form-control" asp-for="Target" id="target" />
+    </div>
+    <button class="btn btn-success" type="submit">Calculate</button>
+</form>
+
+
+<h4>@ViewBag.Distance</h4>
