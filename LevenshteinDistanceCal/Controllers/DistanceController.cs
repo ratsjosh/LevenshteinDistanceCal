@@ -25,6 +25,10 @@ namespace LevenshteinDistanceCal.Controllers
                     float result = MathsFactory.Similarity(model.Target.ToLower(), model.Source.ToLower());
                     ViewBag.Distance = $"Words match: { result }%";
             }
+            else
+            {
+                ViewBag.Distance = $"Words match: 0";
+            }
 
             return View("Index");
         }
